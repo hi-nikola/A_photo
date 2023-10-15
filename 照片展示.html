@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <title>Nikola的摄影日志</title> 
+  <meta charset="utf-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/main.css" /> 
+  <link rel="shortcut icon" href="https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152206771.ico" /> 
+  <noscript> 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/css/noscript.css" /> 
+  </noscript> 
+ </head> 
+ <body class="is-preload"> 
+  <!-- Wrapper --> 
+  <div id="wrapper"> 
+   <!-- Header --> 
+   <header id="header"> 
+    <h1><a href="https://hi-nikola.cn"><strong>Nikola</strong> </a></h1> 
+    <nav> 
+     <ul> 
+      <li><a href="https://hi-nikola.cn" class="">返回主页</a></li> 
+      <li><a href="#footer" class="icon solid fa-info-circle">关于</a></li> 
+     </ul> 
+    </nav> 
+   </header> 
+   <!-- Main --> 
+   <div id="main"> 
+   </div> 
+   <!-- Footer --> 
+   <footer id="footer" class="panel"> 
+    <div class="inner split"> 
+     <div> 
+      <section> 
+       <h2>我的记录</h2> 
+       <p>Nikola相册共有<span id="count_CN"></span>张图片哦，普通人的一生也值得记录。</p> 
+      </section> 
+      <!-- <section>  -->
+       <!-- <ul class="icons">  -->
+        <!-- <li><a href="https://gitee.com/wrongcode" class="icon brands fa-github" target="_blank"><span class="label">Gitee</span></a></li> 
+        <li><a href="https://hi-nikola.cn" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>  -->
+       <!-- </ul>  -->
+      <!-- </section>  -->
+      <p class="copyright"> &copy; 2023 <a href="https://hi-nikola.cn">Nikola &middot; Nikola</a> . </p> 
+     </div> 
+     <div> 
+      <section> 
+       <h2>关于Nikola</h2> 
+       <p>当我沉默着的时候，我觉得充实；我将开口，同时感到空虚。<br />是拍照也是在拍自己。</p> 
+      </section> 
+     </div> 
+    </div> 
+   </footer> 
+  </div> 
+  <script type="text/javascript">
+	var datas =`本人,2021年12月18日拍摄 武汉站,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202207252125130.jpg
+出租车,2021年光谷天地,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202309280406746.jpg
+草,2022年东湖绿道,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202207081508819.jpg
+午睡的人,2022年,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202207252125143.jpg
+陌生人，祝你快乐,2022年06月01日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152232870.jpg
+夜晚,2022年06月01日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152234040.jpg
+拖把,2018年12月30日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152224030.jpg
+彩虹,2021年06月23日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152241569.jpg
+光,2022年01月04日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152225476.jpg
+桌子,2022年06月01日拍摄,https://hi-nikola.oss-cn-hangzhou.aliyuncs.com/blog/202310152235105.jpg`;
+	datas = datas.split("\n");
+	for (var i = 0; i < datas.length; i++) {
+		datas[i] = datas[i].split(",");
+	}
+
+	function creatArticle(datas) {
+		var parent = document.getElementById("main");
+		for (var i = 0; i < datas.length; i++) {
+			var article = document.createElement("article");
+			article.className = "thumb";
+			parent.appendChild(article);
+			var a = document.createElement("a");
+			a.className = "image";
+			a.href = datas[i][2];
+			article.appendChild(a);
+			var img = document.createElement("img");
+			img.src = datas[i][2]; // + "?x-oss-process=image/resize,w_640/quality,q_85"
+			a.appendChild(img);
+			var h2 = document.createElement("h2");
+			h2.innerHTML = datas[i][0];
+			article.appendChild(h2);
+			var p = document.createElement("p");
+			p.innerHTML = datas[i][1];
+			article.appendChild(p);
+		}
+	}
+	creatArticle(datas);
+	document.getElementById("count_CN").innerHTML = datas.length;
+  </script> 
+  <!-- Scripts --> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/jquery.poptrox.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/browser.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/breakpoints.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/util.js"></script> 
+  <script src="https://cdn.jsdelivr.net/gh/616620131/photo-page-for-typecho@2.0/Multiverse/js/main.js"></script>  
+ </body>
+</html>
